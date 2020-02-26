@@ -1,0 +1,38 @@
+.pendu > .updateletter {
+  text-align: center;
+}
+
+.pendu > .updateletter > label > h2 {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: super;
+  border-bottom: dotted 1px black;
+}
+
+.pendu > .updateletter > label > input {
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  font-weight: bold underline;
+  border-radius: 10%;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 12px #555;
+}
+
+.pendu > .updateletter > label > input,
+input::-webkit-input-placeholder {
+  font-size: 40px;
+  text-align: center;
+}
+
+.pendu > .updateletter > button {
+  display: inline-block;
+  width: 81px;
+  height: 30px;
+  font-weight: bold;
+  border-radius: 10%;
+  vertical-align: super;
+  box-shadow: 1px 1px 12px #555;
+  font-size: 20px;
+}
