@@ -1,0 +1,7 @@
+.pendu > .updateword {
+  margin: 20px;
+}
+
+.pendu > .updateword > h1 > span {
+  padding-left: 5px;
+}
