@@ -1,0 +1,48 @@
+.lememory {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.imagememory {
+  margin: auto;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 30%;
+  height: 300px;
+}
+
+.imagelememory {
+  width: 350px;
+  border-radius: 50%;
+  height: 300px;
+}
+.selectoption {
+  justify-content: center;
+  display: flex;
+}
+
+.option {
+  width: 21%;
+}
+
+.buttonmemory {
+  font-size: 25px;
+  margin-top: 15%;
+  width: 105px;
+  text-align: center;
+  border: solid 2px black;
+  border-radius: 20px;
+}
+
+.buttonmemory:hover {
+  color: rgb(209, 209, 223);
+  background-color: black;
+  border: solid 2px rgb(209, 209, 223);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.select {
+  width: 130px;
+}

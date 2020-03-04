@@ -1,0 +1,15 @@
+.buttondialog {
+  text-decoration: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(59, 78, 161);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buttondialog:hover {
+  background-color: white;
+  color: rgb(59, 78, 161);
+}

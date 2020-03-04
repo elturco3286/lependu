@@ -1,0 +1,13 @@
+.memory > .memorytime {
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.memory > .memorycards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  margin: auto;
+  user-select: none;
+  background-color: white;
+}

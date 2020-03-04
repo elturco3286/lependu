@@ -1,0 +1,56 @@
+.lemorpion {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.imagemorpion {
+  margin: auto;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 30%;
+  height: 300px;
+}
+
+.imagelemorpion {
+  width: 350px;
+  border-radius: 50%;
+  height: 300px;
+}
+
+.lemorpion > h2 {
+  margin-bottom: 0;
+}
+.players {
+  justify-content: center;
+  display: flex;
+}
+
+.player {
+  width: 21%;
+}
+
+.player > h3 {
+  margin-bottom: 5px;
+}
+
+.buttonmorpionplay {
+  font-size: 25px;
+  margin-top: 200%;
+  width: 105px;
+  text-align: center;
+  border: solid 2px black;
+  border-radius: 20px;
+}
+
+.buttonmorpionplay:hover {
+  color: rgb(209, 209, 223);
+  background-color: black;
+  border: rgb(209, 209, 223);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+/* .player {
+  width: 130px;
+} */
