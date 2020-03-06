@@ -14,8 +14,8 @@ interface MyState {
   wordUpdate: string[];
   counter: number;
   replay: boolean;
-  notReplay: boolean;
   win: boolean;
+  pendu: boolean;
 }
 
 class Pendu extends React.Component<{}, MyState> {
@@ -28,8 +28,8 @@ class Pendu extends React.Component<{}, MyState> {
       wordUpdate: this.generateWordUpdate(),
       counter: 1,
       replay: false,
-      notReplay: false,
-      win: false
+      win: false,
+      pendu: true
     };
   }
 
@@ -82,31 +82,44 @@ class Pendu extends React.Component<{}, MyState> {
     this.setState({ letter }, () => this.handleCheckWord());
   };
 
-  openDialog = (replay: boolean, notReplay: boolean) => {
-    this.setState({ replay, notReplay });
+  replay = (replay: boolean) => {
+    this.setState({ replay });
   };
 
   render() {
-    const { word, wordUpdate, counter, win } = this.state;
+    const { word, wordUpdate, counter, win, pendu } = this.state;
     return (
       <div className="pendu">
-        <h2>
-          {counter === 7
-            ? "Attention !!! Plus le droit à l'erreur !!!"
-            : `Vous avez le droit de vous tromper ${7 - counter} fois`}{" "}
-        </h2>
+        {counter < 8 ? (
+          <h2>
+            {counter === 7
+              ? "Attention !!! Plus le droit à l'erreur !!!"
+              : `Vous avez le droit de vous tromper ${7 - counter} fois`}
+          </h2>
+        ) : (
+          <h2>PENDU !</h2>
+        )}
 
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
         <img
           className="imagependu"
-          src={require(`../assets/images/image${counter}.jpg`)}
+          src={
+            counter === 9
+              ? require("../assets/images/image8.jpg")
+              : require(`../assets/images/image${counter}.jpg`)
+          }
         />
 
         <UpdateWord wordUpdate={wordUpdate} />
         <UpdateLetter onChoiceLetter={this.handleCheckLetter} />
 
-        {(counter === 8 || win) && (
-          <DialogResult onOpenDialog={this.openDialog} win={win} word={word} />
+        {(counter === 8 || counter === 9 || win) && (
+          <DialogResult
+            win={win}
+            looseMessage={`You loose !!! Le mot était : ${word}`}
+            onDialogReplay={this.replay}
+            pendu={pendu}
+          />
         )}
       </div>
     );

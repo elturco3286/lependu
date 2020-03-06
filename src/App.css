@@ -1,0 +1,47 @@
+.nav > h1 {
+  text-align: center;
+  margin: 50px;
+}
+
+.jeuxnav {
+  justify-content: space-between;
+  display: flex;
+  margin: 0px 100px;
+}
+
+.jeuxnav > a > button {
+  position: relative;
+  background-color: rgb(209, 209, 223);
+  border: none;
+  cursor: pointer;
+}
+
+.imagenav {
+  width: 250px;
+  border-radius: 50%;
+  height: 230px;
+}
+
+.jeuxnav > a > button > p {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: rgb(1, 131, 8);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.jeuxnav > a > button:hover p {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav > h2 {
+  text-align: center;
+  margin-top: 50px;
+}

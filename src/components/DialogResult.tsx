@@ -2,18 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Dialog from "@material-ui/core/Dialog";
 import {
-  Button,
   DialogTitle,
   DialogContent,
   DialogContentText,
   DialogActions
 } from "@material-ui/core";
-// import "./DialogResult.css";
+import "../assets/css/DialogResult.css";
 
 interface MyProps {
-  onOpenDialog(replay: boolean, notReplay: boolean): void;
+  onDialogReplay?(replay: boolean): void;
   win: boolean;
-  word: string;
+  looseMessage: string;
+  link?: string;
+  pendu?: boolean;
 }
 interface MyState {
   openDialog: boolean;
@@ -27,18 +28,17 @@ class DialogResult extends React.Component<MyProps, MyState> {
     };
   }
 
-  handleCloseReplay = () => {
+  handleClose = () => {
     this.setState({ openDialog: false });
-    this.props.onOpenDialog(true, false);
   };
 
-  handleCloseNotReplay = () => {
+  handleCloseReplayPendu = () => {
     this.setState({ openDialog: false });
-    this.props.onOpenDialog(false, true);
+    this.props.onDialogReplay!(true);
   };
 
   render() {
-    const { win, word } = this.props;
+    const { win, looseMessage, pendu, link } = this.props;
     return (
       <div>
         <Dialog
@@ -47,7 +47,7 @@ class DialogResult extends React.Component<MyProps, MyState> {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {win ? "You win !!!" : `You loose !!! Le mot était ${word}`}
+            {win ? "You win !!!" : looseMessage}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
@@ -56,13 +56,24 @@ class DialogResult extends React.Component<MyProps, MyState> {
           </DialogContent>
           <DialogActions>
             <Link to="/">
-              <Button onClick={this.handleCloseNotReplay} color="primary">
+              <button className="buttondialog" onClick={this.handleClose}>
                 Non
-              </Button>
+              </button>
             </Link>
-            <Button onClick={this.handleCloseReplay} color="primary" autoFocus>
-              Oui
-            </Button>
+            {pendu ? (
+              <button
+                className="buttondialog"
+                onClick={this.handleCloseReplayPendu}
+              >
+                Oui
+              </button>
+            ) : (
+              <Link to={{ pathname: `${link}` }}>
+                <button className="buttondialog" onClick={this.handleClose}>
+                  Oui
+                </button>
+              </Link>
+            )}
           </DialogActions>
         </Dialog>
       </div>

@@ -1,0 +1,34 @@
+.morpion {
+  padding-top: 10px;
+  text-align: center;
+}
+.grid {
+  display: inline-block;
+}
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.status {
+  margin-bottom: 30px;
+}
+.buttonmorpion {
+  font-size: 25px;
+  width: 105px;
+  text-align: center;
+  border: solid 2px black;
+  border-radius: 20px;
+}
+
+.buttonmorpion:hover {
+  color: rgb(209, 209, 223);
+  background-color: black;
+  border: rgb(209, 209, 223);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.buttonmorpion:not(:last-child) {
+  margin-right: 50px;
+}
